@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.sparkstreaming.learn.spark.SparkStreamingKafka;
 
+
 /**
  * Hello world!
  *
@@ -17,6 +18,9 @@ public class App
 		
 		SparkStreamingKafka sparkStreamingKafka = applicationContext.getBean(SparkStreamingKafka.class);
 		sparkStreamingKafka.processSparkStreaming();
+		
+		
+		
 		
 	}
 }
