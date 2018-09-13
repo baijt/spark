@@ -52,7 +52,6 @@ public class SparkTest {
 			@Override
 			public void call(Tuple2<String, Integer> arg0) throws Exception {
 				System.err.println(arg0._1+"=="+arg0._2);
-				
 			}
 		});
 		js.close();

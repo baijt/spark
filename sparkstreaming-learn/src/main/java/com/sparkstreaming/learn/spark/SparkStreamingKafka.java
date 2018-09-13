@@ -78,7 +78,7 @@ public class SparkStreamingKafka  implements java.io.Serializable{
 		  Set<String> topics =new HashSet<String>();
 	         topics.add("boottest");
 		
-		
+		//从kafka中获取数据流 转为Dstream模型
 		JavaInputDStream<ConsumerRecord<String, String>> stream =
 				  KafkaUtils.createDirectStream(
 				    streamingContext,
@@ -90,7 +90,7 @@ public class SparkStreamingKafka  implements java.io.Serializable{
 		
 //		stream.mapToPair(record-> new Tuple2<>(record.key(),record.value()));
 
-        // 6.spark rdd转化和行动处理  
+        // 6.spark rdd转化 Transform 
 		 JavaDStream<String> words = stream.flatMap(new FlatMapFunction<ConsumerRecord<String,String>, String>() {
 
 			@Override
@@ -101,7 +101,7 @@ public class SparkStreamingKafka  implements java.io.Serializable{
 			}
 		});
 		
-		 
+		 //Transform  
 		 JavaPairDStream<String, Integer> javaPairDStream = words.mapToPair(new PairFunction<String, String, Integer>() {
 
 			@Override

@@ -84,6 +84,13 @@
             <artifactId>kafka_2.10</artifactId>
             <version>0.8.0</version>
         </dependency>
+        
+        <dependency>  
+     <groupId>com.netflix.hystrix</groupId>  
+     <artifactId>hystrix-core</artifactId>  
+     <version>1.5.1</version>  
+     </dependency> 
+        
 	
   </dependencies>
   <build>
